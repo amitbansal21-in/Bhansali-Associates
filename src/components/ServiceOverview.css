@@ -1,0 +1,59 @@
+/* ==========================================================================
+   ServiceOverview Component Styles
+   ========================================================================== */
+
+.service-overview-container {
+  background-color: var(--color-background);
+}
+
+.service-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .service-overview-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-48);
+  }
+}
+
+.overview-headline {
+  text-align: left;
+}
+
+.overview-h2 {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.overview-accent-bar {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.overview-narrative {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  font-size: var(--text-small);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.overview-narrative p {
+  margin: 0;
+}
+
+.service-expanded-header {
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--space-16);
+  display: block;
+}
+

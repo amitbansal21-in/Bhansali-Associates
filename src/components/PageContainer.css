@@ -1,0 +1,68 @@
+/* ==========================================================================
+   PageContainer Component Styles
+   ========================================================================== */
+
+.page-container {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Width Configurations */
+.page-container.container-size-narrow .container-inner {
+  max-width: 800px;
+}
+
+.page-container.container-size-default .container-inner {
+  max-width: 1320px;
+}
+
+.page-container.container-size-wide .container-inner {
+  max-width: 1600px;
+}
+
+/* Padding Configurations (Using CSS Variables with clamp overrides where appropriate) */
+.page-container.container-padding-compact {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
+}
+
+.page-container.container-padding-default {
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
+}
+
+.page-container.container-padding-comfortable {
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
+}
+
+/* Responsive Padding Adjustments for Mobile screens */
+@media (max-width: 768px) {
+  .page-container.container-padding-comfortable {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
+  
+  .page-container.container-padding-default {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container.container-padding-comfortable {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+  
+  .page-container.container-padding-default {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+  }
+  
+  .page-container.container-padding-compact {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}

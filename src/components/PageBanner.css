@@ -1,0 +1,184 @@
+/* ==========================================================================
+   PageBanner Component Styles
+   ========================================================================== */
+
+.page-banner {
+  position: relative;
+  padding: var(--space-80) 0;
+  background-color: var(--color-primary); /* Default dark navy */
+  color: var(--color-text-inverse);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.banner-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+.banner-container {
+  position: relative;
+  z-index: 3;
+}
+
+.banner-content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.banner-badge {
+  display: inline-block;
+  background-color: rgba(197, 160, 89, 0.15);
+  color: var(--color-accent);
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-caption);
+  margin-bottom: var(--space-16);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.banner-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  margin-bottom: var(--space-12);
+}
+
+.banner-title {
+  color: var(--color-text-inverse);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.banner-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-24);
+}
+
+.banner-cta {
+  margin-bottom: var(--space-24);
+}
+
+.banner-cta-btn {
+  background-color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-accent) !important;
+}
+
+.banner-cta-btn:hover,
+.banner-cta-btn:focus-visible {
+  background-color: var(--color-accent-hover) !important;
+  border-color: var(--color-accent-hover) !important;
+}
+
+.banner-breadcrumbs {
+  margin-top: var(--space-12);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Themes Definitions
+   ========================================================================== */
+
+/* Dark Theme (Default) */
+.theme-dark {
+  background-color: #0A192F;
+}
+
+/* Light Theme */
+.theme-light {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.theme-light .banner-title {
+  color: var(--color-primary);
+}
+
+.theme-light .banner-subtitle {
+  color: var(--color-text-secondary);
+}
+
+/* Gold Gradient Theme */
+.theme-gold-gradient {
+  background: linear-gradient(135deg, #B38E44 0%, #DBC086 50%, #C5A059 100%);
+  color: var(--color-primary);
+}
+
+.theme-gold-gradient .banner-title {
+  color: var(--color-primary);
+}
+
+.theme-gold-gradient .banner-subtitle {
+  color: var(--color-secondary);
+}
+
+.theme-gold-gradient .banner-badge {
+  background-color: rgba(10, 25, 47, 0.08);
+  color: var(--color-primary);
+  border-color: rgba(10, 25, 47, 0.15);
+}
+
+.theme-gold-gradient .banner-label {
+  color: var(--color-primary);
+}
+
+.theme-gold-gradient .banner-cta-btn {
+  background-color: var(--color-primary) !important;
+  color: var(--color-text-inverse) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.theme-gold-gradient .banner-cta-btn:hover {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+/* Navy Gradient Theme */
+.theme-navy-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #152E52 60%, var(--color-accent) 100%);
+}
+
+/* Minimal Banner Theme (Reduced Padding) */
+.theme-minimal {
+  padding: var(--space-48) 0;
+  min-height: auto;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Responsive Constraints
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .page-banner {
+    padding: var(--space-64) 0;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-banner {
+    padding: var(--space-48) 0;
+  }
+}

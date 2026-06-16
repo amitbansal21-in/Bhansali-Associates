@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Why Choose Us Section Component Styles - Phase 3
+   ========================================================================== */
+
+.why-choose-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-background); /* White backdrop contrasted with services alt background */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-64);
+}
+
+.why-choose-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-12);
+}
+
+.why-choose-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.why-choose-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+}
+
+/* 4-Card Grid system: 4 col desktop, 2 col tablet, 1 col mobile */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 576px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-24); /* Balanced spacing for 4 items */
+  }
+}
+
+/* Card Styling matching premium guidelines */
+.why-choose-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-40) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Uniform grid track heights */
+  /* GPU accelerated transition properties */
+  transition: transform 0.4s var(--ease-premium), 
+              box-shadow 0.4s var(--ease-premium), 
+              border-color 0.4s var(--ease-premium);
+}
+
+.why-choose-card:hover {
+  transform: translateY(-6px) translateZ(0); /* Minimal hover lift */
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+/* Icon layout container */
+.why-choose-card-icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-alt);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-24);
+  transition: background-color var(--trans-normal), color var(--trans-normal);
+}
+
+.why-choose-card:hover .why-choose-card-icon-container {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.why-choose-card-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.why-choose-card-title {
+  color: var(--color-primary);
+  font-size: var(--text-body-large);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+}
+
+.why-choose-card-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Responsive Spacings
+   ========================================================================== */
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: var(--space-64) 0;
+  }
+  .why-choose-header {
+    margin-bottom: var(--space-40);
+  }
+}

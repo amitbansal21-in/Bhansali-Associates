@@ -1,0 +1,95 @@
+.industry-faq-section {
+  background-color: var(--color-surface);
+}
+
+.industry-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-top: var(--space-48);
+}
+
+.industry-faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+  overflow: hidden;
+}
+
+.industry-faq-item:hover,
+.industry-faq-item.is-open {
+  border-color: var(--color-accent);
+}
+
+.industry-faq-item.is-open {
+  box-shadow: var(--shadow-soft);
+}
+
+.industry-faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-20) var(--space-24);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  min-height: 56px;
+}
+
+.industry-faq-trigger:focus-visible {
+  background-color: var(--color-surface-alt);
+}
+
+.industry-faq-question {
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding-right: var(--space-16);
+}
+
+.industry-faq-chevron-wrapper {
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--trans-normal) var(--ease-premium), color var(--trans-normal);
+}
+
+.industry-faq-trigger:hover .industry-faq-chevron-wrapper {
+  color: var(--color-accent);
+}
+
+.industry-faq-item.is-open .industry-faq-chevron-wrapper {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+
+.industry-faq-chevron {
+  width: 20px;
+  height: 20px;
+}
+
+.industry-faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--trans-normal) var(--ease-premium);
+}
+
+.industry-faq-item.is-open .industry-faq-panel {
+  max-height: 300px; /* Bounded height check */
+}
+
+.industry-faq-answer {
+  padding: 0 var(--space-24) var(--space-20);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  color: var(--color-text-secondary);
+}
+
+.industry-faq-answer p {
+  margin: 0;
+}

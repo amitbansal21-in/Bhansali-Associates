@@ -1,0 +1,127 @@
+/* ==========================================================================
+   ServiceCTA Component Styles
+   ========================================================================== */
+
+.service-cta-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-background);
+  position: relative;
+  z-index: 1;
+}
+
+.service-cta-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #152E52 70%, var(--color-accent) 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-luxury);
+  padding: var(--space-80) var(--space-48);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-cta-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-surface) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.service-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-cta-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-16);
+}
+
+.service-cta-title {
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-20);
+}
+
+.service-cta-desc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-40);
+}
+
+.service-cta-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-20);
+}
+
+.service-cta-btn-primary {
+  background-color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.service-cta-btn-primary:hover,
+.service-cta-btn-primary:focus-visible {
+  background-color: var(--color-accent-hover) !important;
+  border-color: var(--color-accent-hover) !important;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.service-cta-btn-secondary {
+  background-color: transparent !important;
+  color: var(--color-text-inverse) !important;
+  border-color: var(--color-text-inverse) !important;
+  font-weight: 600;
+}
+
+.service-cta-btn-secondary:hover,
+.service-cta-btn-secondary:focus-visible {
+  background-color: var(--color-text-inverse) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-text-inverse) !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .service-cta-section {
+    padding: var(--space-64) 0;
+  }
+  .service-cta-card {
+    padding: var(--space-64) var(--space-24);
+  }
+  .service-cta-action-group {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+  .service-cta-action-group .btn {
+    width: 100%;
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .service-cta-action-group .btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bhansali Associates",
+  "short_name": "Bhansali",
+  "description": "Bhansali Associates is a premium Chartered Accountant firm providing strategic financial consulting, tax advisory, and auditing services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFBFC",
+  "theme_color": "#0A192F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

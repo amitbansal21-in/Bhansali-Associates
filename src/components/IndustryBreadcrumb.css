@@ -1,0 +1,5 @@
+.industry-breadcrumb-wrapper {
+  margin-bottom: var(--space-20);
+  display: flex;
+  align-items: center;
+}

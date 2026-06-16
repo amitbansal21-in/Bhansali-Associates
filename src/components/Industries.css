@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Industries We Serve Section Component Styles - Phase 5
+   ========================================================================== */
+
+.industries-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-surface-alt); /* Contrasts with Leadership section white background */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.industries-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-64);
+}
+
+.industries-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-12);
+}
+
+.industries-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.industries-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+}
+
+/* 6-Card Responsive Grid */
+.industries-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-40); /* Luxury gap for 3 items per row */
+  }
+}
+
+/* Card Styling */
+.industry-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-40) var(--space-32);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Equal card heights in grid row */
+  transition: transform 0.4s var(--ease-premium), 
+              box-shadow 0.4s var(--ease-premium), 
+              border-color 0.4s var(--ease-premium);
+}
+
+.industry-card:hover {
+  transform: translateY(-6px) translateZ(0); /* Premium hover lift offset */
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+.industry-card:focus-within {
+  border-color: var(--color-accent);
+}
+
+/* Icon Box layout */
+.industry-icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-alt);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-24);
+  transition: background-color var(--trans-normal), color var(--trans-normal);
+}
+
+.industry-card:hover .industry-icon-container,
+.industry-card:focus-within .industry-icon-container {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.industry-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.industry-card-title {
+  color: var(--color-primary);
+  font-size: var(--text-h4);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+}
+
+.industry-card-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-24);
+  flex-grow: 1; /* Pushes CTA triggers to bottom */
+}
+
+/* Card CTA Action trigger */
+.industry-card-action {
+  margin-top: auto;
+}
+
+.industry-card-link {
+  color: var(--color-primary);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 48px; /* Touch target compliance */
+  transition: color var(--trans-fast);
+}
+
+.industry-card-link:hover,
+.industry-card-link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.industry-card-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.arrow-icon {
+  transition: transform var(--trans-fast) var(--ease-premium);
+}
+
+.industry-card-link:hover .arrow-icon,
+.industry-card-link:focus-visible .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive spacing overrides */
+@media (max-width: 768px) {
+  .industries-section {
+    padding: var(--space-64) 0;
+  }
+  .industries-header {
+    margin-bottom: var(--space-40);
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-card {
+    padding: var(--space-32) var(--space-24);
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .industry-card {
+    transition: none !important;
+  }
+  .industry-card:hover {
+    transform: none !important;
+  }
+}

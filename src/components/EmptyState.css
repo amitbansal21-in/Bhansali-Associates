@@ -1,0 +1,51 @@
+.empty-state-card {
+  text-align: center;
+  padding: var(--space-64) var(--space-32);
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  max-width: 540px;
+  margin: var(--space-48) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.empty-state-icon-wrapper {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+  margin-bottom: var(--space-20);
+  background-color: var(--color-surface-alt);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.empty-state-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+}
+
+.empty-state-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-28);
+}
+
+.empty-state-reset-btn {
+  border-color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
+}
+
+.empty-state-reset-btn:hover {
+  background-color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
+}

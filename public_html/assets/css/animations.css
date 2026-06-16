@@ -1,0 +1,318 @@
+/**
+ * Bhansali Associates - Project Design System & Architecture
+ * Animation System
+ * Philosophy: Elegant, Premium, Smooth, GPU-Optimized
+ */
+
+/* ==========================================================================
+   1. ANIMATION TOKENS
+   ========================================================================== */
+:root {
+  /* Durations */
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 700ms;
+
+  /* Easing Functions - Premium & Smooth curves */
+  --ease-default: ease;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1); /* Apple-like snap */
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);  /* Elegant slow deceleration */
+}
+
+
+/* ==========================================================================
+   2. KEYFRAMES
+   ========================================================================== */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+/* ==========================================================================
+   3. BASE ANIMATION UTILITIES (Scroll Reveal Ready)
+   ========================================================================== */
+
+/* Utility classes for direct application (pre-AOS or custom observers) */
+.fade-up, .fade-down, .fade-left, .fade-right, .fade-in, .scale-up {
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-premium), 
+              transform var(--duration-slow) var(--ease-premium);
+  will-change: opacity, transform;
+}
+
+/* Initialization States */
+.fade-up { transform: translateY(30px); }
+.fade-down { transform: translateY(-30px); }
+.fade-left { transform: translateX(30px); }
+.fade-right { transform: translateX(-30px); }
+.scale-up { transform: scale(0.95); }
+.fade-in { transform: none; }
+
+/* Active States (Triggered via JS observer or AOS) */
+.fade-up.is-visible, 
+.fade-down.is-visible, 
+.fade-left.is-visible, 
+.fade-right.is-visible, 
+.fade-in.is-visible,
+.scale-up.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Base Transition Reset for AOS Compatibility */
+[data-aos] {
+  transition-duration: var(--duration-slow) !important;
+  transition-timing-function: var(--ease-premium) !important;
+}
+
+
+/* ==========================================================================
+   4. STAGGER UTILITIES
+   ========================================================================== */
+.stagger-1 { transition-delay: 100ms !important; }
+.stagger-2 { transition-delay: 200ms !important; }
+.stagger-3 { transition-delay: 300ms !important; }
+.stagger-4 { transition-delay: 400ms !important; }
+.stagger-5 { transition-delay: 500ms !important; }
+
+
+/* ==========================================================================
+   5. HOVER EFFECTS & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* Global Smoothness */
+.nav-link, .btn, .card, a, svg {
+  transition: all var(--duration-normal) var(--ease-premium);
+}
+
+/* Premium Hover Lift */
+.hover-lift {
+  will-change: transform;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Soft Glow */
+.hover-glow-soft:hover {
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.15); /* Accent color glow */
+}
+
+/* Gold Border Interaction */
+.hover-border-gold {
+  border: 1px solid transparent;
+}
+.hover-border-gold:hover {
+  border-color: var(--color-accent);
+}
+
+/* Card Hover Ecosystem (Services, Blogs, Stats, Team) */
+.hover-card {
+  will-change: transform, box-shadow;
+}
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-luxury);
+}
+/* Internal elements response on card hover */
+.hover-card:hover .card-icon svg {
+  transform: scale(1.1);
+  color: var(--color-accent);
+}
+
+/* Image Zoom (Smooth, contained) */
+.zoom-soft {
+  overflow: hidden;
+}
+.zoom-soft img {
+  transition: transform var(--duration-slow) var(--ease-smooth);
+  will-change: transform;
+}
+.zoom-soft:hover img {
+  transform: scale(1.03); /* Extremely subtle scaling */
+}
+
+
+/* ==========================================================================
+   6. PREMIUM COMPONENT INTERACTIONS
+   ========================================================================== */
+
+/* Premium Navigation Underline */
+.nav-link-premium {
+  position: relative;
+  display: inline-block;
+}
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-accent); /* Luxury Gold */
+  transform-origin: bottom right;
+  transition: transform var(--duration-normal) var(--ease-premium);
+}
+.nav-link-premium:hover::after,
+.nav-link-premium.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Icon Interactions */
+.icon-hover-rotate:hover svg {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+/* Button Micro-Interactions */
+.hover-button {
+  position: relative;
+  overflow: hidden;
+}
+.hover-button:active {
+  transform: translateY(1px); /* Tactile feedback */
+}
+
+/* CSS Ripple Architecture */
+.ripple-ready {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-ready .ripple-element {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: rgba(255, 255, 255, 0.25);
+  animation: ripple-effect var(--duration-slow) linear;
+  pointer-events: none;
+}
+
+/* FAQ Accordion Transitions */
+/* Height animations require JS measuring for perfection, but fallback to max-height for CSS */
+.faq-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-slow) var(--ease-premium),
+              opacity var(--duration-normal) var(--ease-premium);
+}
+.faq-item.is-open .faq-content {
+  max-height: 500px; /* Safe upper limit */
+  opacity: 1;
+}
+.faq-item .faq-icon {
+  transition: transform var(--duration-normal) var(--ease-premium);
+}
+.faq-item.is-open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Footer Link Subtle Slide */
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  transform: translateX(0);
+}
+.footer-link:hover {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   7. UTILITY ANIMATIONS
+   ========================================================================== */
+
+/* Subtle Continuous Float for decorative elements */
+.anim-float {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+
+/* ==========================================================================
+   8. SKELETON / LOADING STATES
+   ========================================================================== */
+
+/* Shimmer Loading Placeholder */
+.skeleton-loader {
+  background: var(--color-border);
+  background-image: linear-gradient(
+    to right,
+    var(--color-border) 0%,
+    var(--color-surface) 20%,
+    var(--color-border) 40%,
+    var(--color-border) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 2000px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: 100%;
+  min-height: 1em;
+}
+
+.skeleton-text { height: 1em; margin-bottom: 0.5em; width: 80%; }
+.skeleton-title { height: 2em; margin-bottom: 1em; width: 60%; }
+.skeleton-image { height: 250px; width: 100%; }
+
+
+/* ==========================================================================
+   9. ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Strip all CSS animations and transitions */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Reset initial states for fade/scale so content remains visible */
+  .fade-up, .fade-down, .fade-left, .fade-right, .fade-in, .scale-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable AOS completely via overrides */
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Reset decorative floats */
+  .anim-float {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Disable hover transform movements */
+  .hover-lift:hover,
+  .hover-card:hover,
+  .hover-button:active,
+  .zoom-soft:hover img,
+  .footer-link:hover {
+    transform: none !important;
+  }
+}

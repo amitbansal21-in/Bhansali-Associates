@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="120" fill="#0A192F"/>
+  <!-- Elegant Serif Lettermark 'BA' in Gold -->
+  <text x="50%" y="58%" font-family="'Playfair Display', Georgia, serif" font-size="220" font-weight="bold" fill="#C5A059" text-anchor="middle" dominant-baseline="middle">BA</text>
+  <!-- Accent Border -->
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="none" stroke="#C5A059" stroke-width="8" opacity="0.4"/>
+</svg>

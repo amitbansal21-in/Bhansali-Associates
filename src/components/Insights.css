@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Insights & Knowledge Centre Section Component Styles - Phase 6
+   ========================================================================== */
+
+.insights-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-surface-alt); /* Contrasts with Process section white background */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.insights-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-64);
+}
+
+.insights-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-12);
+}
+
+.insights-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.insights-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+}
+
+/* 3-Card Grid layout */
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .insights-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-40); /* Luxury gap for 3 items per row */
+  }
+}
+
+/* Insight Card design */
+.insight-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.4s var(--ease-premium), 
+              box-shadow 0.4s var(--ease-premium), 
+              border-color 0.4s var(--ease-premium);
+}
+
+.insight-card:hover {
+  transform: translateY(-6px) translateZ(0); /* GPU friendly hover lift */
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+.insight-card:focus-within {
+  border-color: var(--color-accent);
+}
+
+/* Article Featured Image */
+.insight-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-surface-alt);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insight-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s var(--ease-premium);
+}
+
+.insight-card:hover .insight-card-image {
+  transform: scale(1.05);
+}
+
+/* Fallback Editorial Gradient Header (kept for articles without images) */
+.insight-card-banner {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #152E52 60%, var(--color-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.insight-banner-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: radial-gradient(var(--color-surface) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.insight-banner-tag {
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  color: var(--color-text-inverse);
+  letter-spacing: 0.25em;
+  opacity: 0.4;
+  user-select: none;
+}
+
+.insight-card-content {
+  padding: var(--space-32) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.insight-category-wrapper {
+  margin-bottom: var(--space-12);
+}
+
+.insight-category-badge {
+  font-size: var(--text-caption);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+}
+
+.insight-card-title {
+  color: var(--color-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+}
+
+.insight-card-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-24);
+  flex-grow: 1; /* Pushes metadata & CTA triggers to bottom */
+}
+
+/* Metadata row (Date & Read time) */
+.insight-metadata {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-20);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-16);
+}
+
+.insight-metadata-divider {
+  color: var(--color-accent);
+  opacity: 0.5;
+}
+
+.insight-action {
+  margin-top: auto;
+}
+
+.insight-card-link {
+  color: var(--color-primary);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 48px; /* Touch target compliance */
+  transition: color var(--trans-fast);
+}
+
+.insight-card-link:hover,
+.insight-card-link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.insight-card-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.arrow-icon {
+  transition: transform var(--trans-fast) var(--ease-premium);
+}
+
+.insight-card-link:hover .arrow-icon,
+.insight-card-link:focus-visible .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive Padding adjustments */
+@media (max-width: 768px) {
+  .insights-section {
+    padding: var(--space-64) 0;
+  }
+  .insights-header {
+    margin-bottom: var(--space-40);
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-card-content {
+    padding: var(--space-24) var(--space-20);
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .insight-card {
+    transition: none !important;
+  }
+  .insight-card:hover {
+    transform: none !important;
+  }
+}

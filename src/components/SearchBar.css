@@ -1,0 +1,77 @@
+.search-bar-wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto var(--space-40);
+}
+
+.search-bar-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar-icon {
+  position: absolute;
+  left: var(--space-16);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.search-bar-input {
+  width: 100%;
+  padding: var(--space-16) var(--space-48) var(--space-16) var(--space-48);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.search-bar-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+}
+
+.search-bar-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+  outline: none;
+}
+
+/* Hide native clear search buttons */
+.search-bar-input::-webkit-search-cancel-button,
+.search-bar-input::-webkit-search-decoration,
+.search-bar-input::-webkit-search-results-button,
+.search-bar-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.search-bar-clear-btn {
+  position: absolute;
+  right: var(--space-16);
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--trans-normal), color var(--trans-normal);
+}
+
+.search-bar-clear-btn:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+}
+
+.search-bar-clear-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+}

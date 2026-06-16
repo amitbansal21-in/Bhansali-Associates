@@ -1,0 +1,14 @@
+# ==========================================================================
+# Bhansali Associates - Robots.txt Rules for Search Engine Crawlers
+# ==========================================================================
+
+User-agent: *
+Allow: /
+
+# Prevent indexing of temporary or layout directories
+Disallow: /admin/
+Disallow: /api/
+Disallow: /drafts/
+
+# Sitemaps Location
+Sitemap: https://bhansaliassociates.com/sitemap.xml

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 70" width="100%" height="100%">
+  <defs>
+    <!-- Premium luxury gradients for rich depth and metal finish -->
+    <linearGradient id="gold-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A7B3E" />
+      <stop offset="30%" stop-color="#C5A880" />
+      <stop offset="50%" stop-color="#EAD9BA" />
+      <stop offset="70%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#84642C" />
+    </linearGradient>
+    <linearGradient id="navy-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#051024" />
+      <stop offset="50%" stop-color="#0A2240" />
+      <stop offset="100%" stop-color="#11335A" />
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#042F1D" />
+      <stop offset="100%" stop-color="#0B4E32" />
+    </linearGradient>
+    <!-- Soft shadow for a modern premium feel -->
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <drop-shadow dx="1" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- 1. CA FIRM CIRCULAR LOGO (Left side, centered vertically at x=35, y=35) -->
+  <g filter="url(#soft-shadow)">
+    <!-- Off-white luxury textured-look background -->
+    <circle cx="35" cy="35" r="30.5" fill="#FAF8F4" stroke="url(#green-gradient)" stroke-width="3" />
+    
+    <!-- Monogram container, centered & scaled to fit inside the circle -->
+    <g transform="translate(35, 35) scale(0.10) translate(-250, -250)">
+      <!-- MAIN INTERLOCKING MONOGRAM 'BR' (Navy Blue Gradient) -->
+      <!-- Left vertical primary stem -->
+      <path d="M 110,120 L 110,380 C 110,390 118,395 125,395 L 140,395 C 148,395 155,390 155,380 L 155,120 C 155,110 148,105 140,105 L 125,105 C 118,105 110,110 110,120 Z" fill="url(#navy-gradient)" />
+      
+      <!-- Top loop of B/R -->
+      <path d="M 155,105 L 250,105 C 300,105 325,130 325,170 C 325,205 300,225 250,225 L 155,225 Z" fill="none" stroke="url(#navy-gradient)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+      
+      <!-- Bottom loop/leg of R -->
+      <path d="M 155,225 L 240,225 C 290,225 320,245 320,290 C 320,335 290,355 240,355 L 155,355" fill="none" stroke="url(#navy-gradient)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 230,280 L 330,375 C 335,380 342,385 350,385 L 375,385 C 385,385 390,375 382,367 L 290,280 Z" fill="url(#navy-gradient)" />
+
+      <!-- Inner Gold Inlays in loops for premium definition -->
+      <path d="M 185,140 C 230,140 275,142 275,168 C 275,195 230,195 185,195" fill="none" stroke="url(#gold-gradient)" stroke-width="8" stroke-linecap="round" />
+      <path d="M 185,260 C 230,260 270,262 270,288 C 270,315 230,315 185,315" fill="none" stroke="url(#gold-gradient)" stroke-width="8" stroke-linecap="round" />
+
+      <!-- THE INTEGRATED FIDUCIARY GRAPH ARROW (Navy Blue & Gold) -->
+      <!-- Diagonal rising trendline cutting through the monogram -->
+      <path d="M 110,320 L 350,105" fill="none" stroke="url(#navy-gradient)" stroke-width="26" stroke-linecap="round" />
+      <path d="M 110,320 L 350,105" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.3" />
+      <path d="M 110,320 L 350,105" fill="none" stroke="url(#gold-gradient)" stroke-width="4" stroke-linecap="round" />
+      
+      <!-- Arrow Head pointing to Top-Right -->
+      <path d="M 315,95 L 375,95 L 375,155 L 355,135 L 335,155 L 315,135 L 335,115 Z" fill="url(#navy-gradient)" stroke="url(#gold-gradient)" stroke-width="4" stroke-linejoin="round" />
+
+      <!-- FIDUCIARY PROTECTION SHIELD SYSTEM (Gold Gradient) -->
+      <g transform="translate(340, 160)">
+        <path d="M 10,15 C 35,15 45,5 50,0 C 55,5 65,15 90,15 C 90,45 80,75 50,95 C 20,75 10,45 10,15 Z" fill="none" stroke="url(#gold-gradient)" stroke-width="8" stroke-linejoin="round" />
+        <path d="M 18,22 C 35,22 45,14 50,10 C 55,14 65,22 82,22 C 82,45 72,68 50,84 C 28,68 18,45 18,22 Z" fill="url(#gold-gradient)" opacity="0.15" />
+        <path d="M 50,10 L 50,84" fill="none" stroke="url(#gold-gradient)" stroke-width="3" opacity="0.5" />
+      </g>
+
+      <!-- FIDUCIARY SCALES OF JUSTICE / BALANCE (Gold Gradient) -->
+      <g transform="translate(240, 75)">
+        <path d="M 20,40 C 35,32 65,32 80,40" fill="none" stroke="url(#gold-gradient)" stroke-width="6" stroke-linecap="round" />
+        <circle cx="50" cy="36" r="5" fill="url(#gold-gradient)" />
+        <line x1="30" y1="38" x2="15" y2="60" stroke="url(#gold-gradient)" stroke-width="3" />
+        <line x1="30" y1="38" x2="45" y2="60" stroke="url(#gold-gradient)" stroke-width="3" />
+        <path d="M 10,60 C 20,68 40,68 50,60 Z" fill="url(#gold-gradient)" />
+        <line x1="70" y1="38" x2="55" y2="60" stroke="url(#gold-gradient)" stroke-width="3" />
+        <line x1="70" y1="38" x2="85" y2="60" stroke="url(#gold-gradient)" stroke-width="3" />
+        <path d="M 50,60 C 60,68 80,68 90,60 Z" fill="url(#gold-gradient)" />
+      </g>
+    </g>
+  </g>
+
+  <!-- 2. TYPOGRAPHY (Right side) -->
+  <!-- Main Title: Premium Serif -->
+  <text x="82" y="33" 
+        font-family="'Cinzel', 'Playfair Display', 'Georgia', 'Times New Roman', serif" 
+        font-size="19" 
+        font-weight="700" 
+        fill="#0A192F" 
+        letter-spacing="0.06em">BHANSALI ASSOCIATES</text>
+
+  <!-- Subtitle: Clean Wide-Spaced Sans-Serif -->
+  <text x="83" y="51" 
+        font-family="'Inter', 'Montserrat', 'Helvetica', 'Arial', sans-serif" 
+        font-size="8.5" 
+        font-weight="600" 
+        fill="#8A703F" 
+        letter-spacing="0.22em">CHARTERED ACCOUNTANTS</text>
+</svg>

@@ -1,0 +1,58 @@
+.logo-typography {
+  font-family: var(--font-family-secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12); /* Dynamic spacing between mark and text */
+  white-space: nowrap;
+  user-select: none;
+  transition: opacity var(--trans-normal);
+}
+
+.logo-typography:hover {
+  opacity: 0.9;
+}
+
+.logo-brand-text {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-main .logo-brand-first {
+  color: var(--color-primary); /* Navy Blue */
+}
+
+.logo-main .logo-brand-second {
+  color: var(--color-accent); /* Metallic Gold */
+  font-weight: 400;
+  font-style: italic;
+}
+
+.logo-inverse .logo-brand-first {
+  color: var(--color-text-inverse); /* White */
+}
+
+.logo-inverse .logo-brand-second {
+  color: var(--color-accent); /* Metallic Gold */
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Brand mark image specs for correct sizing & alignment */
+.logo-img-mark {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(10, 25, 47, 0.08); /* Soft lift on the circular logo badge */
+  transition: transform var(--trans-fast);
+}
+
+.logo-typography:hover .logo-img-mark {
+  transform: scale(1.05); /* Interactive micro-animation */
+}

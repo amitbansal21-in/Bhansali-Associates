@@ -1,0 +1,45 @@
+.industry-benefits-section {
+  background-color: var(--color-surface);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  margin-top: var(--space-48);
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.benefit-card {
+  padding: var(--space-24);
+  border-left: 2px solid var(--color-accent);
+  background-color: var(--color-surface-alt);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition: background-color var(--trans-normal);
+}
+
+.benefit-card:hover {
+  background-color: rgba(197, 160, 89, 0.05);
+}
+
+.benefit-dot {
+  display: none; /* Hide visual placeholder */
+}
+
+.benefit-card-title {
+  font-size: var(--text-body-large);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+}
+
+.benefit-card-desc {
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  color: var(--color-text-secondary);
+}

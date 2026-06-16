@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Advisory Process Section Component Styles - Phase 6
+   ========================================================================== */
+
+.process-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-background); /* White background to contrast with Industries section Alt */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.process-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-64);
+}
+
+.process-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-12);
+}
+
+.process-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+}
+
+.process-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+}
+
+/* Timeline Layout wrapper */
+.process-timeline {
+  position: relative;
+  width: 100%;
+}
+
+/* Background connector line - Desktop only */
+.timeline-connector-line {
+  display: none;
+  position: absolute;
+  top: 112px; /* Vertically centered behind the icon container boxes */
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(197, 160, 89, 0.45) 50%, transparent 50%);
+  background-size: 16px 2px;
+  background-repeat: repeat-x;
+  animation: timeline-dash-flow 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes timeline-dash-flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 16px 0;
+  }
+}
+
+/* Process Grid */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  position: relative;
+}
+
+/* Tablet Layout (2 + 2 + 1 wrapping) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-24);
+  }
+  
+  .process-card {
+    grid-column: span 2;
+  }
+  
+  /* Center the 5th card in the last row */
+  .process-card:nth-child(5) {
+    grid-column: 2 / span 2;
+  }
+}
+
+/* Desktop Horizontal Timeline (5 inline columns) */
+@media (min-width: 992px) {
+  .timeline-connector-line {
+    display: block; /* Render only on wide desktop viewports */
+  }
+  
+  .process-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-16);
+  }
+}
+
+/* Process Card design */
+.process-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-32) var(--space-20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Sits on top of the background connector line */
+  height: 100%; /* Equal heights */
+  transition: transform 0.4s var(--ease-premium), 
+              box-shadow 0.4s var(--ease-premium), 
+              border-color 0.4s var(--ease-premium);
+}
+
+.process-card:hover {
+  transform: translateY(-6px) translateZ(0); /* GPU friendly hover lift */
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+.process-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  transform: translateY(-6px) translateZ(0);
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+/* Gold Step Number Badge */
+.process-number-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-16);
+}
+
+.process-number {
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h4);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+/* Premium Icon styling */
+.process-icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-alt);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-24);
+  transition: background-color var(--trans-normal), color var(--trans-normal);
+}
+
+.process-card:hover .process-icon-container,
+.process-card:focus-within .process-icon-container {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.process-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.process-card-title {
+  color: var(--color-primary);
+  font-size: var(--text-body-large);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+}
+
+.process-card-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  margin-bottom: 0;
+  flex-grow: 1; /* Pushes description alignment evenly */
+}
+
+/* Responsive Padding adjustments */
+@media (max-width: 768px) {
+  .process-section {
+    padding: var(--space-64) 0;
+  }
+  .process-header {
+    margin-bottom: var(--space-40);
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .process-card {
+    transition: none !important;
+  }
+  .process-card:hover,
+  .process-card:focus-visible {
+    transform: none !important;
+  }
+  .timeline-connector-line {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,16 @@
+/* ==========================================================================
+   ServiceTemplate Page Styles
+   ========================================================================== */
+
+.service-detail-page-node {
+  background-color: var(--color-background);
+}
+
+.service-not-found-block {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+}

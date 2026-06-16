@@ -1,0 +1,98 @@
+/* ==========================================================================
+   ServiceProcess Component Styles
+   ========================================================================== */
+
+.service-process-section-block {
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-process-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  margin-top: var(--space-48);
+}
+
+@media (min-width: 768px) {
+  .service-process-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+  }
+}
+
+.service-process-card-node {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-40) var(--space-24);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s var(--ease-premium), 
+              box-shadow 0.4s var(--ease-premium),
+              border-color 0.4s var(--ease-premium);
+}
+
+.service-process-card-node:hover {
+  transform: translateY(-6px) translateZ(0);
+  box-shadow: var(--shadow-luxury);
+  border-color: var(--color-accent);
+}
+
+.process-step-indicator-wrapper {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-alt);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  margin-bottom: var(--space-24);
+  transition: background-color var(--trans-normal), border-color var(--trans-normal), color var(--trans-normal);
+}
+
+.service-process-card-node:hover .process-step-indicator-wrapper {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.process-step-number-value {
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h4);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.process-step-card-title {
+  color: var(--color-primary);
+  font-size: var(--text-body-large);
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+}
+
+.process-step-card-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  margin-bottom: 0;
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .service-process-card-node {
+    transition: none !important;
+    transform: none !important;
+  }
+  .service-process-card-node:hover {
+    transform: none !important;
+  }
+}

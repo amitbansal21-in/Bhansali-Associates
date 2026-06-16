@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Final Consultation CTA Section Component Styles - Phase 7
+   ========================================================================== */
+
+.cta-section {
+  padding: var(--space-96) 0;
+  background-color: var(--color-surface-alt); /* Contrasts with FAQ section white background */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium gradient card */
+.cta-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #152E52 70%, var(--color-accent) 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-luxury);
+  padding: var(--space-80) var(--space-48);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-surface) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-16);
+}
+
+.cta-title {
+  color: var(--color-text-inverse); /* High-contrast white text */
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-20);
+}
+
+.cta-desc {
+  color: rgba(255, 255, 255, 0.85); /* Legible contrast */
+  font-size: var(--text-body);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-40);
+}
+
+.cta-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-20);
+}
+
+/* Custom primary CTA styling */
+.cta-btn-primary {
+  background-color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-accent) !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.cta-btn-primary:hover,
+.cta-btn-primary:focus-visible {
+  background-color: var(--color-accent-hover) !important;
+  border-color: var(--color-accent-hover) !important;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* Custom secondary CTA styling */
+.cta-btn-secondary {
+  background-color: transparent !important;
+  color: var(--color-text-inverse) !important;
+  border-color: var(--color-text-inverse) !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.cta-btn-secondary:hover,
+.cta-btn-secondary:focus-visible {
+  background-color: var(--color-text-inverse) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-text-inverse) !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: var(--space-64) 0;
+  }
+  .cta-card {
+    padding: var(--space-64) var(--space-24);
+  }
+  .cta-action-group {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+  .cta-action-group .btn {
+    width: 100%;
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .cta-action-group .btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}

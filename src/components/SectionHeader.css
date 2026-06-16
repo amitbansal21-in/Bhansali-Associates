@@ -1,0 +1,92 @@
+/* ==========================================================================
+   SectionHeader Component Styles
+   ========================================================================== */
+
+.section-header {
+  width: 100%;
+  margin-bottom: var(--space-48);
+}
+
+/* Alignments */
+.section-header.text-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px; /* Default reading width for centered headings */
+}
+
+.section-header.text-left {
+  text-align: left;
+  max-width: 800px;
+}
+
+/* Eyebrow / Label (Small gold text) */
+.section-header-eyebrow,
+.section-header-label {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-12);
+}
+
+/* Title */
+.section-header-title {
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-16);
+  font-weight: 700;
+}
+
+/* Optional gold accent divider */
+.section-header-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-bottom: var(--space-20);
+}
+
+.section-header.text-center .section-header-divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Description text */
+.section-header-desc {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-base);
+  margin-bottom: 0;
+}
+
+/* Animation support */
+.section-header.has-animate {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: header-fade-in 0.8s var(--ease-premium) forwards;
+}
+
+@keyframes header-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prefers Reduced Motion override */
+@media (prefers-reduced-motion: reduce) {
+  .section-header.has-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Spacing collapse on mobile screen widths */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: var(--space-32);
+  }
+}

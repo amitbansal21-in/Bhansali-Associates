@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Premium Footer Section Component Styles - Phase 7
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-primary); /* Deep corporate navy background */
+  color: rgba(255, 255, 255, 0.7); /* Standard high contrast legible gray */
+  padding: var(--space-80) 0 var(--space-48);
+  border-top: 1px solid rgba(197, 160, 89, 0.25); /* Subtle gold division line at top */
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4-Column Grid layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+}
+
+@media (min-width: 576px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr; /* Layout balance */
+    gap: var(--space-40);
+  }
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.footer-logo-wrapper {
+  margin-bottom: var(--space-8);
+}
+
+.footer-logo-wrapper a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  max-width: 320px;
+}
+
+.footer-col-title {
+  color: var(--color-text-inverse); /* High contrast white headers */
+  font-size: var(--text-body-large);
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Links Lists */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-small);
+  text-decoration: none;
+  transition: color var(--trans-fast);
+  display: inline-block;
+  min-height: auto; /* Overrides default link block heights */
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Contact Details */
+.footer-address-details {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Tight gap for cohesive layout */
+}
+
+.footer-address-item {
+  font-size: var(--text-small);
+  line-height: var(--lh-base);
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0; /* Reset browser default paragraph margins */
+}
+
+.address-label {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-right: var(--space-8);
+  display: inline; /* Changed to inline */
+}
+
+.address-value {
+  display: inline;
+}
+
+.footer-contact-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color var(--trans-fast);
+  display: inline; /* Changed to inline */
+}
+
+.footer-contact-link:hover,
+.footer-contact-link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.footer-contact-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Social Strip - Architecture Ready */
+.footer-social-strip {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-12);
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  border-radius: var(--radius-full);
+  transition: all var(--trans-fast);
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+/* Footer Bottom Copyright Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: var(--space-64);
+  padding-top: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  text-align: center;
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-left {
+    align-items: flex-start;
+  }
+}
+
+.footer-legal-nav {
+  display: block;
+}
+
+.footer-legal-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8) var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .footer-legal-links-list {
+    justify-content: flex-start;
+  }
+}
+
+.footer-legal-link {
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.45);
+  transition: color var(--trans-fast);
+  min-height: auto;
+  display: inline-block;
+}
+
+.footer-legal-link:hover,
+.footer-legal-link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-copyright-text,
+.footer-designation-text {
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: var(--lh-base);
+}
+
+/* Responsive Grid alignments */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: var(--space-64) 0 var(--space-32);
+  }
+  .footer-bottom {
+    margin-top: var(--space-48);
+  }
+}
+
+/* Prefers Reduced Motion Compatibility */
+@media (prefers-reduced-motion: reduce) {
+  .social-icon-link {
+    transition: none !important;
+    transform: none !important;
+  }
+}
