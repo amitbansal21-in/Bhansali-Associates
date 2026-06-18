@@ -25,10 +25,15 @@
   color: var(--color-primary); /* Navy Blue */
 }
 
+.logo-brand-second {
+  margin-left: 0.28em; /* Explicit visual spacing */
+}
+
 .logo-main .logo-brand-second {
-  color: var(--color-accent); /* Metallic Gold */
-  font-weight: 400;
+  color: #A37F3D; /* Rich luxury gold */
+  font-weight: 500;
   font-style: italic;
+  letter-spacing: 0.2px;
 }
 
 .logo-inverse .logo-brand-first {
@@ -36,9 +41,10 @@
 }
 
 .logo-inverse .logo-brand-second {
-  color: var(--color-accent); /* Metallic Gold */
-  font-weight: 400;
+  color: #B89655; /* Rich luxury gold for inverse background */
+  font-weight: 500;
   font-style: italic;
+  letter-spacing: 0.2px;
 }
 
 /* Brand mark image specs for correct sizing & alignment */

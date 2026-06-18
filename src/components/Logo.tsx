@@ -23,7 +23,7 @@ export const Logo: React.FC<LogoProps> = ({ inverse = false }) => {
       )}
       <span className="logo-brand-text">
         <span className="logo-brand-first">Bhansali</span>
-        <span className="logo-brand-second"> Associates</span>
+        <span className="logo-brand-second">Associates</span>
       </span>
     </div>
   );
