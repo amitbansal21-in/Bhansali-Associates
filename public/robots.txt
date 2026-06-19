@@ -11,4 +11,4 @@ Disallow: /api/
 Disallow: /drafts/
 
 # Sitemaps Location
-Sitemap: https://bhansaliassociates.com/sitemap.xml
+Sitemap: https://bhansaliassociates.co.in/sitemap.xml
